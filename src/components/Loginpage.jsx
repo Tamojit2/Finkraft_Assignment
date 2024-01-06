@@ -20,17 +20,19 @@ const Loginpage = () => {
     e.preventDefault();
     if (username === dummyCredentials.username && password === dummyCredentials.password) {
       setLoginStatus(true);
-      //return <Navigate to='/' replace />;
+      //return <Navigate to='/' dashboard />;
     } else {
-      setLoginStatus(false);
+      alert('Invalid credentials. Please try again.');
+      //setLoginStatus('Invalid credentials. Please try again.');
       //return <><h3> Invalid credentials. Please try again. </h3></>
     }
   };
 
 
-
   if (loginStatus) {
     navigate('/dashboard');
+  } else {
+    //navigate('/');
   }
 
   return (

@@ -4,26 +4,17 @@ import { Pie } from 'react-chartjs-2';
 import '../App.css';
 import {Chart, ArcElement} from 'chart.js'
 
-
 Chart.register(ArcElement)
 
-
-
 const PieChart = ({ missions }) => {
-  // Count the number of successful missions
-
-
   //console.log(missions.length);
-
-
   const successfulMissions = missions.filter(mission => mission.successful === true).length;
 
-  console.log(successfulMissions);
+  //console.log(successfulMissions);
   const failedMissions = missions.length - successfulMissions;
 
-  console.log(failedMissions);
+  //console.log(failedMissions);
 
-  // Data for the pie chart
   const data = {
     labels: ['Successful Missions', 'Failed Missions'],
     datasets: [
@@ -40,7 +31,7 @@ const PieChart = ({ missions }) => {
   const options = {
     maintainAspectRatio: false,
     legend: {
-        display: true, // Ensure legend is set to display
+        display: true,
       },
     title: {
         display: true,
@@ -53,7 +44,7 @@ const PieChart = ({ missions }) => {
 
   return (
     <div style={{ height: '400px', width: '400px', display: 'flex', justifyContent: 'center', alignItems: 'center', margin: 'auto'}}>
-    <Pie data={data} options={options} />
+      <Pie data={data} options={options} />
     </div>
   )
   

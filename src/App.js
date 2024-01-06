@@ -11,6 +11,7 @@ function App() {
       <Routes>
         <Route path="/dashboard" element={<FetchData />} />
         <Route path="/" element={<Loginpage />} />
+        <Route path="*" element={<Loginpage />} />
       </Routes>
 </Router>
       
